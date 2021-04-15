@@ -1,0 +1,56 @@
+[
+  {
+    "employeeID": 101,
+    "empcode": "1121055",
+    "firstName": "Shivendu",
+    "lastName": "Srivastava",
+    "loginName": "shiv.sri",
+    "designation": "Consultant",
+    "doj": "02-Feb-2021"
+  },
+  {
+    "employeeID": 102,
+    "empcode": "1135109",
+    "firstName": "Kinjalk",
+    "lastName": "Tripathi",
+    "loginName": "kinj.tri",
+    "designation": "Sr. Business Analyst",
+    "doj": "08-Jun-2020"
+  },
+  {
+    "employeeID": 103,
+    "empcode": "1156820",
+    "firstName": "Akrati",
+    "lastName": "Bajpai",
+    "loginName": "akra.baj",
+    "designation": "Sr. Security Specialist",
+    "doj": "14-Apr-2019"
+  },
+  {
+    "employeeID": 104,
+    "empcode": "1135820",
+    "firstName": "Raghav",
+    "lastName": "Gowda",
+    "loginName": "ragh.gow",
+    "designation": "Sr. Finance Advisor",
+    "doj": "11-May-2015"
+  },
+  {
+    "employeeID": 105,
+    "empcode": "1165200",
+    "firstName": "Suryansh",
+    "lastName": "Srivastava",
+    "loginName": "sury.sri",
+    "designation": "UI/UX Designer",
+    "doj": "09-Jan-2020"
+  },
+  {
+    "employeeID": 106,
+    "empcode": "1190248",
+    "firstName": "Alekh",
+    "lastName": "Bajpai",
+    "loginName": "alek.baj",
+    "designation": "Test Analyst",
+    "doj": "26-Jan-2020"
+  }
+]
