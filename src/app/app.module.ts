@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
@@ -16,6 +17,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'employeelist', component: EmployeeListComponent },
       { path: 'welcome', component: WelcomePageComponent },

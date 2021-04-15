@@ -9,7 +9,7 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class GetEmployeeListService{
 
-  private employeeListURL = 'app/mock/employees.json';
+  private employeeListURL = "src/assets/employees.json";
 
   constructor(private http: HttpClient){}
 
