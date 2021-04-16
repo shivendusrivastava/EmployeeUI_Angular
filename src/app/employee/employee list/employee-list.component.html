@@ -26,6 +26,8 @@
                       <th>Login Name</th>
                       <th>Designation</th>
                       <th>Date of Joining</th>
+                      <th></th>
+                      <th></th>
                   </tr>
               </thead>
               <tbody>
@@ -36,6 +38,17 @@
                       <td>{{empDetail.loginName}}</td>
                       <td>{{empDetail.designation}}</td>
                       <td>{{empDetail.doj}}</td>
+                      <td>
+                        <a [routerLink]="['/employeelist', empDetail.employeeID]">
+                          <button class="btn btn-primary" > Edit </button>
+                        </a>
+                      </td>
+                      <td>
+                        <button class='btn btn-danger'
+                                (click)='deleteEmployee()'>
+                                Delete
+                        </button>
+                      </td>
                   </tr>
               </tbody>
           </table>

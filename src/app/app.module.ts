@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { EditEmployeeComponent } from './employee/edit/edit-employee/edit-employee.component';
 import { EmployeeListComponent } from './employee/employee list/employee-list.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
@@ -20,6 +21,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'employeelist', component: EmployeeListComponent },
+      { path: 'employeelist/:employeeID', component: EditEmployeeComponent },
       { path: 'welcome', component: WelcomePageComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
