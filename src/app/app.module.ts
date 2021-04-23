@@ -13,7 +13,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   declarations: [
     AppComponent,
     WelcomePageComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,

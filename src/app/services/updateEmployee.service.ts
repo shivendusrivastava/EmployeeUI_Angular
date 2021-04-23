@@ -1,35 +1,28 @@
 import { IEmployee } from '../interface/IEmployee';
-import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap, filter } from 'rxjs/operators';
+import { GetEmployeeListService } from './getEmployeeList.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GetEmployeeListService{
+export class UpdateEmployeeService{
 
-  private url="http://localhost:12345/api/employee";
+  //url="http://localhost:12345/api/employee";
   private employeeListURL = "assets/employees.json";
+  employeeDetails: IEmployee[] = [];
+  sub: any;
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private getEmployeeListService: GetEmployeeListService){}
 
-  getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this.url)
+  updateEmployee(employee: IEmployee): Observable<IEmployee> {
+    return this.http.get<IEmployee>(this.employeeListURL)
     .pipe(
+      map(epics => epics.filter(epic => epic.employeeID === employee.employeeID)[0]),
       tap(data => console.log('All: ', JSON.stringify(data))),
-      catchError(this.handleError)
-    );
-  }
-
-  getEmployee(emplID: number): Observable<IEmployee> {
-    let params = new HttpParams();
-    params = params.append('employeeId', emplID.toString());
-    return this.http.get<IEmployee>(this.url, {params: params})
-    .pipe(
-      tap(data => console.log('All: ', JSON.stringify(data))),
-      catchError(this.handleError)
-    );
+      catchError(this.handleError))
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {

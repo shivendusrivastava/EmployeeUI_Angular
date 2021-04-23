@@ -8,33 +8,34 @@
         <tbody>
           <tr>
             <th scope="row">Employee Code</th>
-            <td>
-              {{employee.empcode}}
-            </td>
+            <td>{{employee.empcode}}</td>
           </tr>
           <tr>
             <th scope="row">First Name</th>
-            <input type='text' class="form-control" value={{employee.firstName}}>
+            <input type='text' class="form-control" [(ngModel)]='employee.firstName'>
           </tr>
           <tr>
             <th scope="row">Last Name</th>
-            <input type='text' class="form-control" value={{employee.lastName}}>
+            <input type='text' class="form-control" [(ngModel)]='employee.lastName'>
           </tr>
           <tr>
             <th scope="row">Login Name</th>
-            <input type='text' class="form-control" value={{employee.loginName}}>
+            <input type='text' class="form-control" [(ngModel)]='employee.loginName'>
           </tr>
           <tr>
             <th scope="row">Designation</th>
-            <input type='text' class="form-control" value={{employee.designation}}>
+            <input type='text' class="form-control" [(ngModel)]='employee.designation'>
           </tr>
           <tr class="form-group">
             <th scope="row">Date of Joining</th>
-            <input type='text' class="form-control" value={{employee.doj}}>
+            <input type='text' class="form-control" [(ngModel)]='employee.doj'>
           </tr>
         </tbody>
       </table>
     </div>
-    <a class="btn btn-primary" (click)='onBack()'>Back</a>
+    <div class="col">
+      <a class="btn btn-primary" style="margin-right: 15px" (click)='onBack()'>Back</a>
+      <a class="btn btn-dark" (click)='onUpdate()'>Update</a>
+    </div>
   </div>
 </div>

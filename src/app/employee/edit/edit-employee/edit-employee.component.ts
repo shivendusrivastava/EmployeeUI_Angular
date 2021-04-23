@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IEmployee } from 'src/app/interface/IEmployee';
@@ -8,7 +8,7 @@ import { GetEmployeeListService } from 'src/app/services/getEmployeeList.service
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.css']
 })
-export class EditEmployeeComponent implements OnInit {
+export class EditEmployeeComponent implements OnInit, OnDestroy {
 
   constructor(private getEmployeeService: GetEmployeeListService, private route: ActivatedRoute, private router: Router) { }
 
@@ -17,7 +17,7 @@ export class EditEmployeeComponent implements OnInit {
   errorMessage: string = '';
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('employeeID'));
+    const id = (this.route.snapshot.paramMap.get('employeeID')).toString();
     this.sub = this.getEmployeeService.getEmployees().subscribe({
       next: employees => {
         this.employee = employees.find(data => data.employeeID === id)
@@ -32,5 +32,9 @@ export class EditEmployeeComponent implements OnInit {
 
   onBack(): void{
     this.router.navigate(['./employeelist']);
+  }
+
+  onUpdate() {
+    this.router.navigate(["./employeelist"]);
   }
 }

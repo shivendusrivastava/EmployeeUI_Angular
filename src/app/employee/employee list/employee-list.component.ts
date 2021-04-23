@@ -41,7 +41,7 @@ export class EmployeeListComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this.sub = this.getEmployeeListService.getEmployees().subscribe({
       next: employees => {
-        this.employeeDetails = employees;
+        this.employeeDetails = employees as IEmployee[];
         this.filteredEmployees = this.employeeDetails;
       },
       error: err => this.errorMessage = err
